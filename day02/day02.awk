@@ -1,21 +1,10 @@
 BEGIN {
-    count=0;
+    FS="[- :]+" 
 }
 {
-    $1 $2 $3; 
-    split($1, rep, "-");
-    split($2, char, ":");
-    split($3, pass, "");
-
-    n=0;
-
-    for (i=1; i <= length($3); i++) {
-        if (pass[i] == char[1]) {
-            n++; 
-        } 
-    }
-
-    if(n >= rep[1] && n <= rep[2]) {
+    n = gsub($3,$3,$4)
+ 
+    if(n >= $1 && n <= $2) {
         count++;
     }
 }
