@@ -1,18 +1,15 @@
 BEGIN {
-    count=0;
+    FS="[- :]+" 
 }
 {
-    $1 $2 $3; 
-    split($1, rep, "-");
-    split($2, char, ":");
-    split($3, pass, "");
+    split($4, pass, "");
 
     n=0;
 
-    if (pass[rep[1]] == char[1])
+    if (pass[$1] == $3)
         n++;
 
-    if (pass[rep[2]] == char[1])
+    if (pass[$2] == $3)
         n++;    
 
     if(n == 1) {
