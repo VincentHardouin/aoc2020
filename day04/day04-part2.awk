@@ -13,8 +13,8 @@ BEGIN {
 {
     delete already_scan;
 
-    for (i=1; i <= NF; i++) {
-        if (i % 2 == 1 && $i in fields && $i in already_scan == 0 && match($(i+1), fields[$i])) {
+    for(i=1; i<NF; i+=2) {
+        if ($i in fields && $i in already_scan == 0 && match($(i+1), fields[$i])) {
             already_scan[$i]="";  
         }
     }
