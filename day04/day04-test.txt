@@ -1,0 +1,38 @@
+hcl:5d90f0 cid:270 ecl:#66dc9c hgt:62cm byr:1945 pid:63201172 eyr:2026
+
+ecl:amb byr:1943 iyr:2014 eyr:2028
+pid:333051831
+
+iyr:dgdg byr:hdr  hgt:dge hcl:dhdf
+pid:cdb eyr:dch
+
+ecl:amb byr:1943 byr:2014 eyr:2028
+pid:333051831
+
+byr:hdr iyr:dgdg hgt:dge hcl:dhdf
+pid:cdb eyr:dch
+
+
+byr:hdr 
+iyr:dgdg 
+hgt:dge hcl:dhdf
+pid:cdb eyr:dch 
+pid:cdb eyr:dch 
+pied:cdb eyddr:dch 
+
+byr:hdr 
+iyr:dgdg 
+pid:cdb eyr:dch 
+pid:cdb eyr:dch 
+pid:cdb eyr:dch 
+pid:cdb eyr:dch 
+pid:cdb eyr:dch 
+pied:cdb eyddr:dch 
+
+
+eyr:2028 
+pid:302044900 
+iyr:2011 
+byr:hgt 
+ecl:190cm 
+ecl:amb hcl:#c0946f
