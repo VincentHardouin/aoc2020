@@ -10,6 +10,15 @@ pub fn day02() -> String {
     total_valid.to_string()
 }
 
+pub fn day02_part2() -> String {
+    let policies = read_data();
+    let total_valid = policies
+        .iter()
+        .filter( |p | p.is_valid_at_toboggan())
+        .count();
+    total_valid.to_string()
+}
+
 #[derive(Debug)]
 pub struct PasswordPolicy {
     pub min: usize,
@@ -35,8 +44,13 @@ impl PasswordPolicy {
         count >= self.min && count <= self.max
     }
 
-    pub fn is_valid_at_toboggan(&self) -> Option<char> {
-        self.password.chars().nth(2)
+    pub fn is_valid_at_toboggan(&self) -> bool {
+        if self.password.len() < self.min.max(self.max) { return false }
+        let letter = self.letter.as_bytes()[0] as char;
+        let password_chars = self.password.chars().collect::<Vec<char>>();
+        let first = &password_chars[self.min - 1] == &letter;
+        let second = &password_chars[self.max - 1] == &letter;
+        first ^ second
     }
 }
 
@@ -71,7 +85,7 @@ mod tests {
     #[test]
     fn test_password_policy2() {
         // given
-        let password_string = "1-2 k: kkkkhkkkkkkkkkk";
+        let password_string = "1-5 k: kkkkhkkkkkkkkkk";
         let regex = Regex::new(REGEX).unwrap();
         let password_policy = PasswordPolicy::new(password_string, &regex).unwrap();
 
@@ -79,11 +93,16 @@ mod tests {
         let result = password_policy.is_valid_at_toboggan();
 
         // then
-       assert_eq!(result, Some('d'));
+       assert_eq!(result, true);
     }
 
     #[test]
     fn test_day02() {
         assert_eq!(day02(), "519");
+    }
+
+    #[test]
+    fn test_day02_part2() {
+        assert_eq!(day02_part2(), "708");
     }
 }
