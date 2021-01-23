@@ -1,0 +1,24 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix",
+    "test": "mocha --exit --recursive --reporter=dot"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "lodash": "^4.17.20"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^7.17.0",
+    "eslint-plugin-mocha": "^8.0.0",
+    "mocha": "^8.2.1"
+  }
+}
