@@ -38,7 +38,9 @@ function getAllPossibilities(values) {
   const possibilities = [];
   _.forEach(values, (number1) => {
     _.forEach(values, (number2) => {
-      possibilities.push(new Possibility([number1, number2]));
+      _.forEach(values, (number3) => {
+        possibilities.push(new Possibility([number1, number2, number3]));
+      });
     });
   });
   return possibilities;
